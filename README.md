@@ -22,13 +22,13 @@ Edit `config.json` to set your dataset and training parameters:
 ```json
 {
   "data_config": {
-    "dataset_name": "EmbedLLM",  // or "RouterBench"
+    "dataset_name": "RouterBench",
     "text_encoder": "all-mpnet-base-v2",
     "batch_size": 32,
     "shuffle": true
   },
   "pipeline_config": {
-    "model_type": "mlp",  // or "mirt"
+    "model_type": "mlp",
     "model_config": {
       "hidden_dims": [512, 256],
       "output_dim": 112,
