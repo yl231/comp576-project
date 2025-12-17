@@ -2,6 +2,10 @@
 
 A complete training framework for LLM routing experiments supporting multiple datasets (RouterBench) and model architectures (MLP, Residual MLP, MIRT).
 
+## Pipeline Overview
+
+![Pipeline](pipeline576.png)
+
 ## Quick Start
 
 ### 1. Setup Environment
