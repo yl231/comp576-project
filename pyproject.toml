@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trainframework"
+version = "0.1.0"
+description = "Training framework for LLM routing experiments"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=1.9.0",
+  "pandas>=1.3.0",
+  "numpy>=1.21.0",
+  "scikit-learn>=1.0.0",
+  "matplotlib>=3.4.0",
+  "seaborn>=0.11.0",
+  "sentence-transformers>=3.0.1",
+  "wandb>=0.15.0",
+  "transformers>=4.37.0",
+  "tokenizers>=0.15.0",
+  "huggingface-hub>=0.21.0",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.5.0",
+  "black>=24.0",
+]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]

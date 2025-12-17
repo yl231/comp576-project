@@ -1,0 +1,55 @@
+{
+  "data_config": {
+    "dataset_name": "RouterBench",
+    "text_encoder": "all-mpnet-base-v2",
+    "shuffle": true,
+    "batch_size": 32,
+    "data_paths": {
+      "dataset_dir": "./datasets",
+      "results_dir": "./trainframework"
+    }
+  },
+  "pipeline_config": {
+    "model_type": "mlp",
+    "model_config": {
+      "hidden_dims": [512, 256],
+      "output_dim": 11,
+      "dropout": 0.1,
+      "activation": "tanh",
+      "use_batch_norm": false,
+      "use_layer_norm": false,
+      "use_weight_decay": false,
+      "weight_decay": 1e-4,
+      "use_spectral_norm": false,
+      "use_dropout2d": false
+    }
+  },
+  "training_config": {
+    "device": "cuda",
+    "epochs": 100,
+    "patience": 20,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-5,
+    "criterion": "BCEWithLogitsLoss",
+    "optimizer": "Adam",
+    "save_best_model": true,
+    "plot_training_history": true,
+    "save_paths": {
+      "model_path": "./best_model.pth",
+      "results_path": "./results.json"
+    }
+  },
+  "evaluation_config": {
+    "classification_report": true,
+    "additional_metrics": true
+  },
+  "wandb_config": {
+    "project": "routerbench-router",
+    "entity": "yifan21lu-rice-university",
+    "name": null,
+    "tags": ["mlp", "routerbench", "router"],
+    "notes": "Multi-output MLP for RouterBench model routing",
+    "save_code": true,
+    "resume": "allow"
+  }
+}
